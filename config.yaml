@@ -1,0 +1,31 @@
+metadata:
+  version: "1.0"
+  author: "MR"
+  description: "This notebook evaluates different LLM models across various benchmark types such as MMLU, FinanceQA, and Contextual QA."
+  supported_models:
+    - llama3.1_az_8q
+    - llama3.1_az
+    - llama3.1_az_v2
+    # - lama3.2:3b-instruct-fp16
+  benchmark_types:
+    QA: "Handles questions with simple Q&A format"
+    Arzuman: "Handles questions with options where one is correct"
+    ContextQA: "Handles questions with context and answers"
+    Reshad: "Handles questions with topic-based options where one is correct"
+    ARC: "Handles questions w ..."
+  dataset_naming_convention:
+    _mmlu_fqa: "Arzuman"
+    _cqa: "ContextQA"
+    _qa: "QA"
+    _tc: "Reshad"
+    _mmlu_arc: "ARC"
+
+dataset_files:
+  - "datasets/input_datasets/LLM_BENCH_qa.xlsx"
+  - "datasets/input_datasets/Quad_benchmark_cqa.xlsx"
+  - "datasets/input_datasets/banking-benchmark-405b-vs-8b_latest_mmlu_fqa.xlsx"
+  - "datasets/input_datasets/LLM-Benchmark-reshad_tc.xlsx"
+  - "datasets/input_datasets/arc_translated_mmlu_arc.xlsx"
+
+output:
+  results_file: "datasets/output_datasets/benchmark_results_yaml.xlsx"
